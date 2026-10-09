@@ -1,0 +1,15 @@
+{
+  "timestamp": "09/10/2026 14:00:00",
+  "painel": {
+    "ignicao": true,
+    "combustivel_pct": 75
+  },
+  "motor": {
+    "rpm": 850,
+    "velocidade_kmh": 0,
+    "status": "em_funcionamento",
+    "tempArref_c": 90,
+    "freio": false,
+    "arCondicionado": false
+  }
+}
