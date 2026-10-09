@@ -20,4 +20,12 @@ As apresentações e a documentação de cada sprint devem registrar as entregas
 - **Git:** histórico e rastreamento das alterações.
 - **GitHub Projects:** quadro proposto na sprint 1; configuração a confirmar.
 
-As ferramentas de desenvolvimento serão acrescentadas conforme forem escolhidas pelo grupo.
+- **Android Studio:** ambiente utilizado para desenvolvimento do aplicativo.
+- **Firebase Realtime Database:** serviço de armazenamento adotado no firmware.
+- **Monitor Serial:** saída de telemetria e mensagens de diagnóstico prevista no código.
+
+## Atualização para a sprint 2
+
+A documentação da proposta e da sprint 1 foi adicionada ao repositório. O firmware e a documentação técnica foram enviados por Gabriela para publicação e análise. O aplicativo permanece em desenvolvimento.
+
+Na consulta de 09/10/2026, não foram encontradas issues cadastradas. Os critérios e os modelos para acompanhamento estão em [Acompanhamento](09-Acompanhamento.md). Não foram definidos responsáveis ou prazos neste registro.
