@@ -1,73 +1,85 @@
-# TÍTULO DO PROJETO
+# Monitoramento Veicular utilizando Rede CAN
 
-`CAMPUS/UNIDADE`
-
-`CURSO`
-
-`SEMESTRE`
-
-`DISCIPLINA`
-
+**Disciplina:** IoT II  
+**Semestre:** 2º semestre de 2026  
+**Campus/unidade, curso e orientador:** a confirmar.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-
-## Orientador
-
-* Nome completo do professor 1
+- Gabriela Almeida
+- Victoria Barbosa
+- Sabrina Ferreira
 
 ## Resumo
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto propõe um sistema de monitoramento veicular que coleta informações da rede CAN por meio de hardware baseado em ESP32, armazena os dados e os disponibiliza em um aplicativo. Os parâmetros de interesse são rotação do motor (RPM), velocidade, temperatura do líquido de arrefecimento e estado da ignição.
 
-# Código (do(s) equipamento(s) de IoT)
+O objetivo é oferecer ao motorista uma visão acessível do funcionamento diário do veículo e de seu histórico. O acompanhamento poderá ajudar a perceber alterações no comportamento do carro e apoiar a procura por manutenção preventiva.
 
-<li><a href="Codigo/README.md"> Código Fonte (.c,.cpp,.h, etc)</a></li>
+## Arquitetura proposta
 
-# Aplicativo para BackEnd
+**Veículo (rede CAN) → Hardware → Armazenamento dos dados → Monitoramento via aplicativo**
 
-<li><a href="Back/README.md"> BackEnd - Códigos Fonte</a></li>
+O hardware previsto inclui cabo OBD-II, regulador de tensão, módulo CAN, conversor de nível lógico e ESP32. Os modelos dos componentes, protocolos de comunicação, banco de dados e tecnologias do aplicativo serão registrados conforme forem definidos e validados pelo grupo.
 
-# Aplicativo para FrontEnd
-
-<li><a href="Front/README.md"> FrontEnd - Códigos Fonte</a></li>
-
-# Aplicativo para Smartphone
-
-<li><a href="App/README.md"> Aplicativo - Códigos Fonte</a></li>
-
-# Banco de dados
-
-<li><a href="DB/README.md"> Banco de dados - Diagramas(entidades, relacionamentos), Scripts, etc</a></li>
-
-# Apresentação
-
-<ol>
-<li><a href="Apresentacao/Sprint 1/README.md"> Sprint 1</a></li>
-<li><a href="Apresentacao/Sprint 2/README.md"> Sprint 2</a></li>
-<li><a href="Apresentacao/Sprint 3/README.md"> Sprint 3</a></li>
-<li><a href="Apresentacao/Videos_fotos/README.md"> Vídeo do Funcionamento</a></li>
-<li><a href="Apresentacao/Videos_fotos/README.md"> Fotos do Projeto</a></li>
-</ol>
-
-# Manual de Utilização
-
-<li><a href="Manual/manual de utilização.md"> Manual de Utilização</a></li>
+## Situação do projeto
 
 
-# Documentação
+| Etapa    | Situação                                                                 |
+| -------- | ------------------------------------------------------------------------ |
+| Sprint 1 | Apresentada: problema, proposta, arquitetura e funcionalidades previstas |
+| Sprint 2 | Em desenvolvimento; atualizações e evidências a registrar                |
+| Sprint 3 | Registro futuro                                                          |
 
-<ol>
-<li><a href="Documentacao/01-Introducão.md"> Introdução</a></li>
-<li><a href="Documentacao/02-Metodologias Ágeis.md"> Metodologias Ágeis</a></li>
-<li><a href="Documentacao/03-Desenvolvimento.md"> Desenvolvimento </a></li>
-<li><a href="Documentacao/04-Testes.md"> Testes </a></li>
-<li><a href="Documentacao/05-Conclusão.md"> Conclusão </a></li>
-<li><a href="Documentacao/06-Referências.md"> Referências </a></li>
-</ol>
 
+A documentação atual descreve a proposta apresentada na sprint 1. Funcionalidades previstas não representam, por si só, implementações concluídas ou testadas.
+
+## Objetivos
+
+- Coletar mensagens e obter os parâmetros de interesse da rede CAN.
+- Interpretar e armazenar as informações coletadas.
+- Disponibilizar as informações para consulta pelo aplicativo.
+- Apresentar os dados e seu histórico de forma compreensível ao motorista.
+
+
+
+## Organização do repositório
+
+A estrutura original da disciplina foi mantida.
+
+
+| Área                                                       | Conteúdo                                        |
+| ---------------------------------------------------------- | ----------------------------------------------- |
+| [Código do equipamento](Codigo/README.md)                  | Firmware e código do hardware                   |
+| [BackEnd](Back/README.md)                                  | Serviços de acesso às informações               |
+| [FrontEnd](Front/README.md)                                | Código de interface, conforme a solução adotada |
+| [Aplicativo](App/README.md)                                | Aplicativo para smartphone                      |
+| [Banco de dados](DB/README.md)                             | Modelagem e scripts                             |
+| [Manual de utilização](Manual/manual%20de%20utilização.md) | Instruções de uso                               |
+
+
+
+
+## Apresentações
+
+- [Sprint 1](Apresentacao/Sprint%201/README.md)
+- [Sprint 2](Apresentacao/Sprint%202/README.md)
+- [Sprint 3](Apresentacao/Sprint%203/README.md)
+- [Vídeos e fotos do projeto](Apresentacao/Videos_fotos/README.md)
+
+
+
+## Documentação
+
+- [Introdução e proposta](Documentacao/01-Introducão.md)
+- [Metodologias ágeis](Documentacao/02-Metodologias%20Ágeis.md)
+- [Desenvolvimento e arquitetura](Documentacao/03-Desenvolvimento.md)
+- [Testes](Documentacao/04-Testes.md)
+- [Conclusão](Documentacao/05-Conclusão.md)
+- [Referências](Documentacao/06-Referências.md)
+
+
+
+## Acompanhamento
+
+As tarefas do grupo serão acompanhadas pelas [issues do repositório](https://github.com/sabrinahelena/IoTII---02_2026-CAN/issues). O Git registra o histórico das alterações. O uso de GitHub Projects foi proposto na sprint 1; a configuração do quadro permanece a confirmar.
