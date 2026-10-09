@@ -1,26 +1,23 @@
-## Gerenciamento de Projeto
+# Gerenciamento do projeto
 
+## Organização
 
-# Metodologia
+O trabalho é desenvolvido em grupo, com acompanhamento por sprints. A sprint 1 apresentou o problema, a proposta e a arquitetura geral. A sprint 2 está em desenvolvimento.
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+## Divisão de papéis
 
-### Divisão de Papéis
+A equipe é formada por Gabriela Almeida, Victoria Barbosa e Sabrina Ferreira. A distribuição de responsáveis pelas tarefas será registrada após definição do grupo.
 
-Apresente a divisão de papéis entre os membros do grupo.
+## Processo de acompanhamento
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Aluno 1;
-- Equipe de Desenvolvimento: Aluno 1, Aluno 2, Aluno 3;
+As tarefas serão registradas em issues do repositório, com descrição e critérios de conclusão. O grupo poderá atualizar o andamento, incluir evidências e encerrar cada tarefa quando os critérios forem atendidos.
 
+As apresentações e a documentação de cada sprint devem registrar as entregas, decisões, testes e pendências confirmadas pelo grupo. Não há, neste registro, definição de cerimônias ou papéis formais de Scrum.
 
-### Processo
+## Ferramentas
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. Cole aqui um print do quadro Kanban utilizado pelo grupo.
- 
+- **GitHub:** repositório, documentação e acompanhamento de tarefas por issues.
+- **Git:** histórico e rastreamento das alterações.
+- **GitHub Projects:** quadro proposto na sprint 1; configuração a confirmar.
 
-### Ferramentas
-
-As ferramentas utilizadas no projeto foram:
-
-- Liste aqui as ferramentas utilizadas para desenvolvimento do projeto (como por exemplo: Arduino IDE, APP Inventor, trello e outros). Obs: não é para listar aqui os componentes utilizados.
+As ferramentas de desenvolvimento serão acrescentadas conforme forem escolhidas pelo grupo.
