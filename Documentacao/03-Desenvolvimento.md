@@ -1,33 +1,58 @@
-
-# Materiais
-
-Os materiais utilizados no projeto foram:
-- Liste os materiais usados no projeto, como Arduino/ESP, sensores, atuadores e outros.
-
 # Desenvolvimento
 
-Descreva aqui como foi o desenvolvimento do trabalho, destacando cada uma das etapas necessárias para chegar até a solução final.
+## Estado atual do registro
 
-## Desenvolvimento do Aplicativo
+Este documento descreve a arquitetura proposta na sprint 1. A montagem, o firmware, o armazenamento e o aplicativo terão seu desenvolvimento e testes registrados conforme o grupo informar as entregas.
 
-### Interface
+## Arquitetura proposta
 
-Descreva o desenvolvimento das telas do aplicativo.
+**Veículo (rede CAN) → Hardware → Armazenamento dos dados → Monitoramento via aplicativo**
 
-### Código
+O fluxo mantém a arquitetura apresentada na sprint 1: obter informações do veículo, processá-las no hardware, armazená-las e permitir seu acompanhamento pelo aplicativo.
 
-Descreva o desenvolvimento do código do aplicativo.
+## Materiais previstos
 
-## Desenvolvimento do Hardware
+- Cabo OBD-II.
+- Regulador de tensão.
+- Módulo CAN.
+- Conversor de nível lógico.
+- ESP32.
+
+Os modelos, especificações, esquema de ligação e materiais efetivamente utilizados serão documentados após confirmação do grupo.
+
+## Desenvolvimento do hardware
 
 ### Montagem
 
-Descreva como foi o processo da montagem do projeto.
+Prevê-se integrar os componentes para comunicação com a rede CAN do veículo. O esquema elétrico e as evidências da montagem ainda devem ser registrados.
 
-### Desenvolvimento do Código
+### Código
 
-Descreva como foi o desenvolvimento do código do arduino/ESP.
+O firmware deverá permitir a captura das mensagens e a obtenção dos parâmetros de interesse: RPM, velocidade, temperatura do líquido de arrefecimento e estado da ignição. A interpretação e a disponibilidade desses parâmetros deverão ser validadas.
 
-## Comunicação entre App e Hardware
+## Armazenamento e acesso aos dados
 
-Descreva como foi o processo de comunicação entre App e arduino/ESP.
+A solução deverá armazenar as informações coletadas e disponibilizá-las para consulta pelo aplicativo. A modelagem do banco, a tecnologia adotada e a interface de acesso serão documentadas conforme forem definidas.
+
+## Desenvolvimento do aplicativo
+
+### Interface
+
+O aplicativo deverá apresentar informações do veículo e permitir o acompanhamento de seu histórico e comportamento por gráficos. As telas e evidências de funcionamento serão incluídas durante o desenvolvimento.
+
+### Código
+
+A tecnologia e a implementação do aplicativo ainda precisam ser registradas. As tarefas incluem desenvolver a interface e integrar a consulta às informações disponibilizadas pelo sistema.
+
+## Comunicação entre aplicativo e hardware
+
+A proposta prevê armazenamento dos dados entre a coleta pelo hardware e a visualização pelo aplicativo. Os protocolos de envio, a interface de consulta e a frequência de atualização permanecem a definir e documentar.
+
+## Registro das próximas entregas
+
+Para cada avanço, registrar:
+
+- O que foi implementado e onde está o código.
+- Decisões técnicas e componentes utilizados.
+- Como foi testado e quais resultados foram obtidos.
+- Evidências, limitações e pendências.
