@@ -1,17 +1,48 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+## Contexto e problema
 
-## Problema
+O projeto Monitoramento Veicular utilizando Rede CAN foi proposto na disciplina IoT II. A manutenção tradicional pode depender de luzes no painel ou de sinais perceptíveis ao motorista, fazendo com que alterações no funcionamento do veículo sejam identificadas apenas quando já se tornaram relevantes.
 
-Nesse momento você deve apresentar o problema que o seu projeto deve  resolver. Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. 
+A falta de acompanhamento contínuo e de acesso ao histórico dificulta observar a evolução dos parâmetros e perceber pequenas mudanças no comportamento do carro.
 
-## Objetivos
+## Proposta
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um projeto para solucionar o problema apresentado acima. 
+Desenvolver um sistema que obtenha informações da rede CAN por meio de hardware baseado em ESP32, armazene os dados e permita acompanhá-los em um aplicativo. A proposta é apresentar informações e gráficos que ajudem o motorista a conhecer o comportamento habitual do veículo e perceber alterações que motivem uma avaliação em oficina.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-## Público-Alvo
+## Objetivo geral
 
-Descreva quem serão as pessoas que usarão o projeto. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, etc.
+Desenvolver um sistema de monitoramento veicular que integre coleta de dados da rede CAN, armazenamento e visualização em aplicativo, apoiando o acompanhamento do funcionamento do veículo.
+
+## Objetivos específicos
+
+- Capturar mensagens da rede CAN e obter os parâmetros de interesse.
+- Interpretar e armazenar os dados coletados.
+- Disponibilizar as informações para consulta pelo aplicativo.
+- Exibir parâmetros e histórico de funcionamento ao motorista.
+- Documentar as etapas de desenvolvimento e os testes do sistema.
+
+## Dados de interesse
+
+| Parâmetro | Significado |
+| --- | --- |
+| RPM | Rotação do motor |
+| Velocidade | Velocidade do veículo |
+| Temperatura | Temperatura do líquido de arrefecimento |
+| Ignição | Estado da chave/ignição |
+
+A disponibilidade e a forma de obtenção de cada parâmetro deverão ser verificadas durante o desenvolvimento.
+
+## Público-alvo
+
+Motoristas que desejam acompanhar informações de funcionamento do veículo por meio de uma interface acessível, sem precisar interpretar diretamente as mensagens da rede CAN.
+
+## Justificativa e ODS
+
+A proposta busca ampliar o acesso ao acompanhamento veicular com hardware aberto e de baixo custo. Na sprint 1, o grupo relacionou o projeto ao ODS 9 (Indústria, Inovação e Infraestrutura), pela democratização da telemetria e modernização da frota, e ao ODS 11 (Cidades e Comunidades Sustentáveis), pelo potencial de apoiar uma mobilidade mais sustentável.
+
+Essas contribuições são objetivos da proposta; impactos sobre manutenção e emissões ainda não foram medidos.
+
+## Estado da proposta
+
+Este documento registra o escopo apresentado na sprint 1. A sprint 2 está em desenvolvimento e suas entregas serão documentadas a partir das informações e evidências do grupo.
