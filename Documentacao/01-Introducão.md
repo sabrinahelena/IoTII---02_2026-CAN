@@ -46,3 +46,9 @@ Essas contribuições são objetivos da proposta; impactos sobre manutenção e 
 ## Estado da proposta
 
 Este documento registra o escopo apresentado na sprint 1. A sprint 2 está em desenvolvimento e suas entregas serão documentadas a partir das informações e evidências do grupo.
+
+## Evolução do escopo na sprint 2
+
+O firmware recebido contempla também nível de combustível, freio e classificação do estado do motor. Foram definidos no código ESP32, MCP2515, envio por Wi-Fi e armazenamento no Firebase Realtime Database. O aplicativo está em desenvolvimento no Android Studio.
+
+Essas informações atualizam a proposta sem alterar o objetivo geral. A implementação e suas limitações estão em [Desenvolvimento](03-Desenvolvimento.md); os resultados de testes ainda precisam de evidências.
