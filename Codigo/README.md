@@ -2,7 +2,7 @@
 
 ## Firmware
 
-[telemetria_firebase.ino](telemetria_firebase/telemetria_firebase.ino) contém a versão enviada por Gabriela, com configurações privadas removidas e correção do comentário inicial.
+[telemetria_firebase.ino](telemetria_firebase/telemetria_firebase.ino), com configurações privadas removidas e correção do comentário inicial.
 
 ### Configuração local
 
