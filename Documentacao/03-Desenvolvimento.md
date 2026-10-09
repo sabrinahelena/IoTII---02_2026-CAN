@@ -1,58 +1,64 @@
 # Desenvolvimento
 
-## Estado atual do registro
+## Estado atual
 
-Este documento descreve a arquitetura proposta na sprint 1. A montagem, o firmware, o armazenamento e o aplicativo terão seu desenvolvimento e testes registrados conforme o grupo informar as entregas.
+A sprint 1 apresentou a proposta. Para a sprint 2, Gabriela enviou firmware de telemetria CAN/Firebase e documentação dos campos. O código implementa leitura, interpretação e envio; ainda é necessário registrar evidências de compilação, execução e gravação. O aplicativo está em desenvolvimento no Android Studio.
 
-## Arquitetura proposta
+## Materiais
 
-**Veículo (rede CAN) → Hardware → Armazenamento dos dados → Monitoramento via aplicativo**
+O firmware usa ESP32 e MCP2515. A proposta inclui cabo OBD-II, regulador de tensão e conversor de nível lógico. O esquema de ligação completo e os modelos dos demais componentes ainda precisam ser anexados.
 
-O fluxo mantém a arquitetura apresentada na sprint 1: obter informações do veículo, processá-las no hardware, armazená-las e permitir seu acompanhamento pelo aplicativo.
+## Arquitetura
 
-## Materiais previstos
+Veículo (CAN) → MCP2515 → SPI → ESP32 → Wi-Fi/Internet → Firebase Realtime Database → aplicativo Android (integração pendente).
 
-- Cabo OBD-II.
-- Regulador de tensão.
-- Módulo CAN.
-- Conversor de nível lógico.
-- ESP32.
-
-Os modelos, especificações, esquema de ligação e materiais efetivamente utilizados serão documentados após confirmação do grupo.
+A comunicação CAN está configurada para 50 kbit/s, com oscilador de 8 MHz. CS = GPIO 5; INT = GPIO 4. O MCP2515 opera em modo normal no código; não deve ser descrito como modo listen-only.
 
 ## Desenvolvimento do hardware
 
 ### Montagem
 
-Prevê-se integrar os componentes para comunicação com a rede CAN do veículo. O esquema elétrico e as evidências da montagem ainda devem ser registrados.
+O esquema elétrico, alimentação, compatibilidade de níveis e registros da montagem ainda devem ser documentados pelo grupo.
 
 ### Código
 
-O firmware deverá permitir a captura das mensagens e a obtenção dos parâmetros de interesse: RPM, velocidade, temperatura do líquido de arrefecimento e estado da ignição. A interpretação e a disponibilidade desses parâmetros deverão ser validadas.
+O [firmware](../Codigo/telemetria_firebase/telemetria_firebase.ino) interpreta cinco IDs CAN. Os campos e fórmulas estão em [Telemetria](08-Telemetria-CAN-Firebase.md).
+
+O código acompanha temporizadores para partida, rotação zero, perda de mensagens de RPM e ausência de heartbeat da ignição. A saída serial é programada para aproximadamente 250 ms.
+
+As configurações privadas foram separadas em `secrets.h`, arquivo local não versionado. Foi corrigido o delimitador de comentário da primeira linha do arquivo recebido. A lógica de coleta e a configuração TLS da versão original foram preservadas.
 
 ## Armazenamento e acesso aos dados
 
-A solução deverá armazenar as informações coletadas e disponibilizá-las para consulta pelo aplicativo. A modelagem do banco, a tecnologia adotada e a interface de acesso serão documentadas conforme forem definidas.
+O firmware usa FirebaseClient, autenticação por e-mail/senha e Firebase Realtime Database. Cada ciclo de envio agenda duas operações:
+- `set` em `/telemetria/atual`, substituindo a amostra anterior;
+- `push` em `/telemetria/historico`, adicionando uma amostra.
+
+O intervalo é de 1 segundo, condicionado a `app.ready()`. Isso não garante persistência de toda amostra. Os callbacks reportam resultados e erros.
 
 ## Desenvolvimento do aplicativo
 
 ### Interface
 
-O aplicativo deverá apresentar informações do veículo e permitir o acompanhamento de seu histórico e comportamento por gráficos. As telas e evidências de funcionamento serão incluídas durante o desenvolvimento.
+O aplicativo está em desenvolvimento no Android Studio. Sua execução ainda está sendo preparada. Não foram fornecidos código, capturas de tela ou evidências de integração.
 
 ### Código
 
-A tecnologia e a implementação do aplicativo ainda precisam ser registradas. As tarefas incluem desenvolver a interface e integrar a consulta às informações disponibilizadas pelo sistema.
+A linguagem, bibliotecas e forma de consulta ao Firebase ainda serão registradas após confirmação do grupo.
 
-## Comunicação entre aplicativo e hardware
+## Comunicação entre app e hardware
 
-A proposta prevê armazenamento dos dados entre a coleta pelo hardware e a visualização pelo aplicativo. Os protocolos de envio, a interface de consulta e a frequência de atualização permanecem a definir e documentar.
+O ESP32 envia dados ao Firebase por Wi-Fi/Internet. A consulta do banco pelo aplicativo é a integração planejada, ainda pendente. Não há evidência de conexão direta app/ESP32 ou de backend próprio.
 
-## Registro das próximas entregas
+## Soluções implementadas e pendências
 
-Para cada avanço, registrar:
+| Necessidade | Solução presente no código | Pendência |
+| --- | --- | --- |
+| Interpretar mensagens CAN | Seleção por ID e extração de bytes/bits | Validar significado e escala no veículo |
+| Distinguir partida e funcionamento | Estados e temporizadores | Testar transições |
+| Tratar ausência de sinais | Timeouts de ignição e RPM | Distinguir falha de comunicação de desligamento real |
+| Guardar dados recentes e passados | Estado atual e histórico no Firebase | Comprovar gravação e definir retenção |
+| Associar horário às amostras | NTP com UTC-3 | Tratar falta de sincronização |
+| Mostrar informações ao motorista | Aplicativo Android em desenvolvimento | Executar e integrar |
 
-- O que foi implementado e onde está o código.
-- Decisões técnicas e componentes utilizados.
-- Como foi testado e quais resultados foram obtidos.
-- Evidências, limitações e pendências.
+As soluções são avanços do projeto; não constituem comprovação de inovação inédita ou de diagnóstico automático de falhas.
